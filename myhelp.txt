@@ -1,0 +1,18 @@
+git init
+[.git]
+git status
+
+# Добавляет все файлы в локальный репозиторий и размещает их для фиксации.
+git add . 
+# Чтобы удалить файл
+git reset file 
+# Сохраняет отслеженные изменения и подготавливает их для отправки в удаленный репозиторий.
+git commit -m "First commit" 
+# Добавьте URL-адрес для удаленного репозитория, куда будет помещен ваш локальный репозиторий.
+git remote add origin [remote repository URL] [https://github.com/Sulladenis/django_book.git]
+# Проверяет новый удаленный URL
+git remote -v
+# Помещает изменения из локального хранилища в удаленное хранилище
+git push origin master (git push -f origin master)
+# Загружает историю из удалённого репозитория и объединяет её с локальной. pull = fetch + merge
+git pull
