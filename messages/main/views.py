@@ -10,7 +10,7 @@ def index(request):
 
 class MSGLoginView(LoginView):
     template_name='main/login.html'
-
+    
 def logoutnlogin(request):
     return logout_then_login(request)
 
