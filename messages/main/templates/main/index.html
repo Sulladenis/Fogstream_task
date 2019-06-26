@@ -1,3 +1,18 @@
-<h1>BLYAD!!!!</h1>
+{% extends "layout/base.html"  %}
+
+{% load bootstrap4 %}
+
+{% block title %}Сообщение{% endblock %}
+
+{% block content %}
 <p>hello {{ request.user.username }}</p>
 <p><a href="{% url 'logout' %}">logout</a></p>
+
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons submit="Отправить" %}{% endbuttons %}
+</form>
+
+
+{% endblock %}
