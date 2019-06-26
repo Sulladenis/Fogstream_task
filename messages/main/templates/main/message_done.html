@@ -1,0 +1,12 @@
+{% extends "layout/base.html"  %}
+{% load bootstrap4 %}
+
+{% block title %}Сообщение отправленно{% endblock %}
+
+{% block content %}
+
+
+<h1>Сообщение успешно отправленно</h1>
+<p><a href="{% url 'index' %}">Отправить ещё</a></p>
+<p><a href="{% url 'logout' %}">Выход</a></p>
+{% endblock %}

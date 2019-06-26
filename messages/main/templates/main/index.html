@@ -5,14 +5,21 @@
 {% block title %}Сообщение{% endblock %}
 
 {% block content %}
-<p>hello {{ request.user.username }}</p>
-<p><a href="{% url 'logout' %}">logout</a></p>
+    <h1>Привет {{ request.user.username }}</h1>
+    <p>Отправь сообщение администатору</p>
+    <p><a href="{% url 'logout' %}">Выход</a></p>
 
-<form method="post">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    {% buttons submit="Отправить" %}{% endbuttons %}
-</form>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons submit="Отправить" %}{% endbuttons %}
+    </form>
 
 
+    <h1>Ваши посленднии сообщения</h1>
+    <ul class="list-group">
+        {% for msg in msgs %}
+        <li class="list-group-item">{{ msg.sent_to }} - {{ msg.text|truncatewords:10}}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}

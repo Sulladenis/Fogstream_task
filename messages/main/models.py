@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Message(models.Model):
-    text = models.TextField(max_length=300, verbose_name='Текст')
+    text = models.TextField(max_length=500, verbose_name='Текст')
     email = models.EmailField(max_length=20, verbose_name='Email')
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Отправитель')
     sent_to = models.DateField(auto_now_add=True, verbose_name='Отправленно')
