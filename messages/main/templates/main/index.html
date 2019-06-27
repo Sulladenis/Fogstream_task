@@ -5,16 +5,19 @@
 {% block title %}Сообщение{% endblock %}
 
 {% block content %}
-    <h1>Привет {{ request.user.username }}</h1>
-    <p>Отправь сообщение администатору</p>
-    <p><a href="{% url 'logout' %}">Выход</a></p>
 
+<div class="row">
+    <div class="col mb-3">
+        <p>Привет {{ request.user.username }}</p>
+        <p>Отправь сообщение администатору</p>
+        <p><a href="{% url 'logout' %}">Выход</a></p>
+    </div>
+</div>
     <form method="post">
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons submit="Отправить" %}{% endbuttons %}
     </form>
-
 
     <h1>Ваши посленднии сообщения</h1>
     <ul class="list-group">

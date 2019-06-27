@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from .utilities import post_save_dispacher
 
 class Message(models.Model):
     text = models.TextField(max_length=500, verbose_name='Текст')
@@ -15,3 +17,6 @@ class Message(models.Model):
         verbose_name = 'Собщения'
         ordering = ['-sent_to']
 
+
+
+post_save.connect(post_save_dispacher, sender=Message)

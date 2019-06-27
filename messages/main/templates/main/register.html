@@ -2,13 +2,21 @@
 
 {% load bootstrap4 %}
 
-{% block title %}Вход{% endblock %}
+{% block title %}Регистрация{% endblock %}
 
 {% block content %}
+
+<div class="row">
+    <div class="col mb-5">
+        <h1>Регистрация пользователя</h1>
+    </div>
+</div>
+
 
 <form method="post">
     {% csrf_token %}
     {% bootstrap_form form layout='horizontal' %}
     {% buttons submit="Зарегистрироваться" %}{% endbuttons %}
 </form>
+
 {% endblock %}

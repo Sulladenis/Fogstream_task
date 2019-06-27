@@ -2,15 +2,31 @@ from django.contrib.auth import password_validation
 from django.contrib.auth.models import User
 from django import forms
 from .models import Message
+from django.contrib.auth.forms import AuthenticationForm, UsernameField
+
+
+class CustomAuthenticationForm(AuthenticationForm):
+    username = UsernameField(
+        label='Имя пользователя',
+        widget=forms.TextInput(attrs={'autofocus': True})
+    )
+    password = forms.CharField(
+        label='Пароль',
+        widget=forms.PasswordInput
+    )
+
 
 class UserRegForm(forms.ModelForm):
-    password1 = forms.CharField(label='Пароль',
-                                widget=forms.PasswordInput,
-                                help_text=password_validation.password_validators_help_text_html())
-
-    password2 = forms.CharField(label='Пароль (повторно)',
-                                widget=forms.PasswordInput,
-                                help_text='Введите пароль повторно для проверки')
+    password1 = forms.CharField(
+        label='Пароль',
+        widget=forms.PasswordInput,
+        help_text=password_validation.password_validators_help_text_html()
+    )
+    password2 = forms.CharField(
+        label='Пароль (повторно)',
+        widget=forms.PasswordInput,
+        help_text='Введите пароль повторно для проверки'
+    )
 
     def clean_password2(self):
         cd = self.cleaned_data
@@ -30,6 +46,11 @@ class UserRegForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email')
+        labels = {
+            'username': 'Имя пользователя',
+            'first_name': 'Имя',
+            'last_name': 'Фамилия'
+        }
 
 class MessageForm(forms.ModelForm):
     

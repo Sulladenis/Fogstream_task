@@ -1,14 +1,15 @@
 from django.contrib.auth.views import LoginView, logout_then_login
 from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
-from main.forms import UserRegForm, MessageForm
+from main.forms import UserRegForm, MessageForm, CustomAuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 
 
 class MSGLoginView(LoginView):
-    template_name='main/login.html'
+    template_name = 'main/login.html'
+    authentication_form = CustomAuthenticationForm
     
 def logoutnlogin(request):
     return logout_then_login(request)
@@ -42,7 +43,3 @@ class MessageViwe(LoginRequiredMixin, CreateView):
 
 class MessageDoneView(LoginRequiredMixin, TemplateView):
     template_name = 'main/message_done.html'
-
-    
-    
-
