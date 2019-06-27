@@ -23,7 +23,7 @@ class RegDoneView(TemplateView):
     template_name = 'main/register_done.html'
     success_url = reverse_lazy('index')
 
-class MessageViwe(LoginRequiredMixin, CreateView):
+class MessageView(LoginRequiredMixin, CreateView):
     template_name = 'main/index.html'
     form_class = MessageForm
     success_url = reverse_lazy('message_done')
