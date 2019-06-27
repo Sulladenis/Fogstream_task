@@ -18,3 +18,5 @@ git push origin master (git push -f origin master)
 git pull
 
 python manage.py dumpdata --indent 1 --output mydata.json main.message auth.user
+sudo docker build -t django .
+sudo docker run -it -p 8000:8000 --rm --name my-app django
