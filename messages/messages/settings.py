@@ -125,3 +125,5 @@ LOGIN_URL = '/main/login'
 LOGIN_REDIRECT_URL = '/main'
 
 EMAIL_BACKEND ='django.core.mail.backends.console.EmailBackend'
+
+ALLOWED_HOSTS = ['*']
