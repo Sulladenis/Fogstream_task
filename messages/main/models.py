@@ -8,6 +8,7 @@ class Message(models.Model):
     email = models.EmailField(max_length=20, verbose_name='Email')
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Отправитель')
     sent_to = models.DateField(auto_now_add=True, verbose_name='Отправленно')
+    sent_email = models.BooleanField(default=False)
 
     def __str__(self):
         return 'message from {} sent: {}'.format(self.user, self.sent_to)
@@ -16,7 +17,6 @@ class Message(models.Model):
         verbose_name_plural = 'Собщение'
         verbose_name = 'Собщения'
         ordering = ['-sent_to']
-
 
 
 post_save.connect(post_save_dispacher, sender=Message)

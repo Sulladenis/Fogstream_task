@@ -22,7 +22,8 @@
     <h1>Ваши посленднии сообщения</h1>
     <ul class="list-group">
         {% for msg in msgs %}
-        <li class="list-group-item">{{ msg.sent_to }} - {{ msg.text|truncatewords:10}}</li>
+        <li class="list-group-item">{{ msg.sent_to }} - {{ msg.text|truncatewords:8}} 
+            {% if msg.sent_email %} Сообщение отправленно на email {% else %} Сообщение не тправленно на email {% endif %}</li>
         {% endfor %}
     </ul>
 {% endblock %}
