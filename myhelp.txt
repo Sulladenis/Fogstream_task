@@ -16,3 +16,5 @@ git remote -v
 git push origin master (git push -f origin master)
 # Загружает историю из удалённого репозитория и объединяет её с локальной. pull = fetch + merge
 git pull
+
+python manage.py dumpdata --indent 1 --output mydata.json main.message auth.user

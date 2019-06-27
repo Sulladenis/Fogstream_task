@@ -1,0 +1,71 @@
+[
+{
+ "model": "auth.user",
+ "pk": 1,
+ "fields": {
+  "password": "pbkdf2_sha256$150000$sbG8sPBJtusR$xo+RhsGA6GJ2U5ONtUXubch2Rw8yfvBkaqb68bk/5Kw=",
+  "last_login": null,
+  "is_superuser": true,
+  "username": "admin",
+  "first_name": "",
+  "last_name": "",
+  "email": "admin@localhost",
+  "is_staff": true,
+  "is_active": true,
+  "date_joined": "2019-06-27T13:46:59.480Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 2,
+ "fields": {
+  "password": "pbkdf2_sha256$150000$uNth6cuiiwbn$F+XukE3iEAQN5iklqaITR4Rp4b96UlEjPRLZ2NEiYzw=",
+  "last_login": "2019-06-27T13:48:08.161Z",
+  "is_superuser": false,
+  "username": "nata",
+  "first_name": "nata",
+  "last_name": "sulla",
+  "email": "mana@localhost",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2019-06-27T13:47:59.252Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "main.message",
+ "pk": 1,
+ "fields": {
+  "text": "\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u0435 \u0444\u0430\u0439\u043b, \u0434\u0430\u0432 \u0435\u043c\u0443 \u0438\u043c\u044f myscript, \u0438 \u0440\u0430\u0431\u043e\u0442\u0430 \u043f\u043e \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u044e bash-\u0441\u043a\u0440\u0438\u043f\u0442\u0430 \u043f\u043e\u0447\u0442\u0438 \u0437\u0430\u043a\u043e\u043d\u0447\u0435\u043d\u0430.",
+  "email": "Shanna@melissa.tv",
+  "user": 2,
+  "sent_to": "2019-06-27",
+  "sent_email": true
+ }
+},
+{
+ "model": "main.message",
+ "pk": 2,
+ "fields": {
+  "text": "\u0410\u0434\u043c\u0438\u043d \u043d\u0435 \u0437\u0430\u0431\u0443\u0434\u044c - \u041a\u043b\u044e\u0447 -a \u043f\u043e\u043a\u0430\u0436\u0435\u0442 \u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 \u043e\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043d\u044b\u0435, \u0430 \u043a\u043b\u044e\u0447 -s \u2014 \u0435\u0433\u043e \u0440\u0430\u0437\u043c\u0435\u0440. \u0442.\u0435. \u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0444\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438, \u0441\u0435\u0439\u0447\u0430\u0441, \u0432 \u0440\u0430\u043d\u0442\u0430\u0439\u043c\u0435, \u044d\u0442\u043e\u0442 \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440 \u0437\u0430\u043d\u0438\u043c\u0430\u0435\u0442 \u043c\u0435\u0441\u0442\u0430 \u043d\u0430 \u0434\u0438\u0441\u043a\u0435.",
+  "email": "Sherwood@rosamond.me",
+  "user": 2,
+  "sent_to": "2019-06-27",
+  "sent_email": true
+ }
+},
+{
+ "model": "main.message",
+ "pk": 3,
+ "fields": {
+  "text": "\u0410\u0442\u0440\u0438\u0431\u0443\u0442 fields \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0430\u043d\u0430\u043b\u043e\u0433\u0438\u0447\u043d\u043e \u0430\u0442\u0440\u0438\u0431\u0443\u0442\u0443 fields \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0435\u0433\u043e \u043a\u043b\u0430\u0441\u0441\u0430 Meta ModelForm. \u0415\u0441\u043b\u0438 \u0432\u044b \u043d\u0435 \u0443\u043a\u0430\u0437\u0430\u043b\u0438 \u043a\u043b\u0430\u0441\u0441 \u0444\u043e\u0440\u043c\u044b \u0434\u0440\u0443\u0433\u0438\u043c \u0441\u043f\u043e\u0441\u043e\u0431\u043e\u043c, \u044d\u0442\u043e\u0442 \u0430\u0442\u0440\u0438\u0431\u0443\u0442 \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u0435\u043d \u0438 \u0432\u044b \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u0435 \u0438\u0441\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 ImproperlyConfigured, \u0435\u0441\u043b\u0438 \u043e\u043d \u043d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d.",
+  "email": "mana@gmail.com",
+  "user": 2,
+  "sent_to": "2019-06-27",
+  "sent_email": true
+ }
+}
+]
