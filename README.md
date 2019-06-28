@@ -12,7 +12,6 @@ username: nata
 email: nata@localhost
 password: message2000
 
-
 Письмо отправляется в консоль с данными о пользователе из http://jsonplaceholder.typicode.com/users
 
 sudo docker build -t django .
