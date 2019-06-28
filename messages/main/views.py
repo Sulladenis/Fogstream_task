@@ -37,6 +37,7 @@ class MessageView(LoginRequiredMixin, CreateView):
         return context
 
     def form_valid(self, form):
+        """Add to the form data about the user who sent the message """
         form.instance.user = self.request.user
         return super().form_valid(form)
     
