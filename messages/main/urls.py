@@ -2,6 +2,8 @@ from django.urls import path
 from django.views.generic.base import TemplateView
 from .views import UserRegView, MessageView, MSGLoginView, RegDoneView
 from .views import logoutnlogin, MessageDoneView
+
+app_name = 'main'
 urlpatterns = [
         path('', MessageView.as_view(), name='index'),
         path('login/', MSGLoginView.as_view(), name='login'),

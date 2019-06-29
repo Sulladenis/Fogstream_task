@@ -10,7 +10,7 @@
     <div class="col mb-3">
         <p>Привет {{ request.user.username }}</p>
         <p>Отправь сообщение администатору</p>
-        <p><a href="{% url 'logout' %}">Выход</a></p>
+        <p><a href="{% url 'main:logout' %}">Выход</a></p>
     </div>
 </div>
     <form method="post">
