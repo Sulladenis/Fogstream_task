@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LoginView, logout_then_login
 from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
-from main.forms import UserRegForm, MessageForm, CustomAuthenticationForm
+from main.forms import UserRegForm, MessageForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
@@ -9,7 +9,6 @@ from django.contrib.auth.models import User
 
 class MSGLoginView(LoginView):
     template_name = 'main/login.html'
-    authentication_form = CustomAuthenticationForm
     
 def logoutnlogin(request):
     return logout_then_login(request)
