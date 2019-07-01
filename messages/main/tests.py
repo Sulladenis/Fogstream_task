@@ -1,5 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import AuthenticationForm
 
 class TestCalls(TestCase):
 
@@ -9,10 +11,18 @@ class TestCalls(TestCase):
         response = self.client.post('/main/', follow=True)
         self.assertRedirects(response, '/main/login/?next=/main/')
 
-class GreetingViewResponseTests(TestCase):
+class GreetingTests(TestCase):
     url = '/main/login/'
     template_name = 'main/login.html'
+    credentials = {
+        'username': 'testuser',
+        'password': 'secret2000'
+        }
 
+    def setUp(self):
+        test_user = User.objects.create_user(**self.credentials)
+        self.assertTrue(isinstance(test_user, User))
+        self.assertTrue(test_user.pk)
 
     def test_url_name(self):
         name_url = reverse('main:login')
@@ -30,3 +40,7 @@ class GreetingViewResponseTests(TestCase):
         response = self.client.get(self.url)
         text = 'Регистрация'
         self.assertContains(response, text, status_code=200)
+    
+    def AuthenticationForm(self):
+        form = AuthenticationForm(data=self.credentials)
+        self.assertTrue(form.is_valid())
