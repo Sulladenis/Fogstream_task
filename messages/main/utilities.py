@@ -25,7 +25,7 @@ def get_user_data(email):
         with urlopen(url+email) as response:
             source = response.read()
     except:
-        return "Инвормация не доступна"
+        return "Информация не доступна"
     try:
         data = json.loads(source)
         for key in data[0].keys():
